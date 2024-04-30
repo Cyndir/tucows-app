@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 15432:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_HOST=localhost
+      - POSTGRES_DB=tucows
+    volumes:
+      - ./dataset:/docker-entrypoint-initdb.d
+ 
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq-test'
+    ports:
+        - 5672:5672
+        - 15672:15672
+    volumes:
+        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq

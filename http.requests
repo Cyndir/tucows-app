@@ -1,0 +1,26 @@
+POST https://localhost:8081/order HTTP/1.1
+
+{
+    "customerid": "1"
+    "productid": "1"
+    "total": "1000"
+}
+
+{
+    "customerid": "1"
+    "productid": "1"
+    "total": "2000"
+}
+
+Take note of ID returned for use in subsequent requests
+
+GET http://localhost:8081/order/:id HTTP/1.1
+
+PATCH http://localhost:8081/order/
+
+{
+    "customerid": "1"
+    "productid": "1"
+    "id": "id-goes-here"
+    "status": "success"
+}
