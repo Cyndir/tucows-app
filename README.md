@@ -6,14 +6,18 @@ Utilizes containerized versions of postgres and rabbitMQ running locally
 
 ## Requirements:
 docker
+
 go version 1.20+
 
 ## How to run:
 in the root of this repo, run `docker compose up`
+
 in another terminal, navigate to cmd/ordermanagement
+
  `go run main.go`
 
 in another terminal, navigate to cmd/paymentprocessor
+
  `go run main.go`
 
 http request examples are in http.requests
@@ -21,6 +25,7 @@ http request examples are in http.requests
 ## How to Test:
 
 unit tests: go test ./...
+
 integration tests: run `docker compose up` if not already started, `go test --tags=integration ./...`
 
 
