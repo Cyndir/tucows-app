@@ -16,7 +16,7 @@ Take note of ID returned for use in subsequent requests
 
 GET http://localhost:8081/order/:id HTTP/1.1
 
-PATCH http://localhost:8081/order/
+PATCH http://localhost:8081/order/ (this is used by the payment processor to update status)
 
 {
     "customerid": "1"
