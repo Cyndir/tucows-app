@@ -53,7 +53,7 @@ func (d *dbImpl) GetOrder(id string) (*model.Order, error) {
 	var res model.Order
 
 	row := d.db.QueryRow("SELECT id, customerid, productid, status FROM orders WHERE id = $1", id)
-	err := row.Scan(&res.ID, &res.CustomerID, &res.ProductID, &res.Status) // only going to have one
+	err := row.Scan(&res.ID, &res.CustomerID, &res.ProductID, &res.Status)
 	if err != nil {
 		log.Printf("Database error: %s", err)
 		return nil, err
