@@ -27,11 +27,19 @@ integration tests: run `docker compose up` if not already started, `go test --ta
 ## Improvements from here:
 
 More dependencies could be injected (the http client on messageProcessor being one)
+
 Messageprocessor, once refactored, needs unit tests
+
 Observability and logging are very minimal right now
+
 Production hardening definitely necessary, currently lots of security problems since it was written as a minimalistic proof-of-concept style
+
 Needs to be configurable instead of hardcoded connection strings, ports, etc.
+
 Error handling currently exists in several different styles. This should be unified.
+
 Middleware could be utilized to clean up some duplication
+
 Could make docker containers for go binaries and add those to the docker compose file.
+
 Implement some github actions for quality gates (code coverage, run tests, etc)
